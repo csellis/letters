@@ -42,7 +42,6 @@ export default function Home() {
     <div className="flex flex-col justify-center items-center min-h-screen">
 
       <div className="text-6xl h-64 text-yellow-400">
-        {process.env.NODE_ENV}
         {letter}
       </div>
       <div className="text-6xl h-64 text-yellow-400">
