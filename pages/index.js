@@ -6,6 +6,19 @@ export default function Home() {
 
   const [start, setstart] = useState(false)
   const [value, setValue] = useState('');
+  const [letter, setletter] = useState('')
+
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+  const pickLetter = () => {
+    const number = Math.floor(Math.random() * 25)
+    // console.log(number)
+    const randomLetter = letters[number];
+    setletter(randomLetter)
+  }
+
+  // console.log(pickLetter()
+  // pickLetter()
 
   const { listen, listening, stop } = useSpeechRecognition({
     onResult: (result) => {
@@ -15,6 +28,7 @@ export default function Home() {
 
   useEffect(() => {
     console.log(`The start is: ${start}`)
+    pickLetter()
     if (start) {
       listen()
     }
@@ -26,7 +40,10 @@ export default function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center min-h-screen">
-      <div className="text-6xl text-yellow-400">
+      <div className="text-6xl h-64 text-yellow-400">
+        {letter}
+      </div>
+      <div className="text-6xl h-64 text-yellow-400">
         {value}
       </div>
       <button className="mt-12 h-1/3 w-1/3 text-6xl" onClick={() => setstart(!start)}>
