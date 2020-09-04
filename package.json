@@ -8,6 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@zeit/next-css": "^1.0.1",
+    "autoprefixer": "^9.8.6",
     "next": "9.5.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
