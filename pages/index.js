@@ -54,20 +54,18 @@ export default function Home() {
 
   return (
     <>
-      <div className="absolute top-0 right-0 text-4xl text-yellow-400 font-mono px-4 py-2 font-semibold">
-        {score} points
-      </div>
       <div className="flex flex-col justify-center items-center min-h-screen">
-        <div className="text-6xl h-64 text-yellow-400 text-center">
+        <div className="top-0 right-0 text-3xl text-yellow-400 font-mono px-4 py-2 font-semibold">
+          {score} points
+      </div>
+        <div className="mt-24 text-3xl sm:text-6xl h-64 text-yellow-400 text-center">
           What is this letter? <br />
           {letter}
         </div>
-        <div className="text-6xl h-64 text-yellow-400 text-center">
-          You guessed: <br />
+        <div className="text-3xl sm:text-6xl h-64 text-yellow-400 text-center">
           {value}
         </div>
         <div className="mt-12">
-
           <button className={`h-1/3 w-1/3 text-6xl ${listening ? "mic" : ""}`} onClick={listening ? stop : listen}>
             🎤
         </button>
