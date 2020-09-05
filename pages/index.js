@@ -1,12 +1,15 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 import { useSpeechRecognition } from 'react-speech-kit';
 import { useState, useEffect } from "react";
-export default function Home() {
+import { Transition } from "@tailwindui/react";
+import { useTimer } from 'use-timer';
 
-  const [start, setstart] = useState(false)
+export default function Home() {
+  // const [start, setstart] = useState(false)
   const [value, setValue] = useState('');
   const [letter, setletter] = useState('')
+  const [score, setscore] = useState(0);
+
+  const INCREMENT_SCORE = 10;
 
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
@@ -17,40 +20,60 @@ export default function Home() {
     setletter(randomLetter)
   }
 
-  // console.log(pickLetter()
-  // pickLetter()
 
   const { listen, listening, stop } = useSpeechRecognition({
     onResult: (result) => {
-      setValue(result);
+      setValue(result)
     },
   });
 
   useEffect(() => {
-    console.log(`The start is: ${start}`)
-    pickLetter()
-    if (start) {
-      listen()
+    if (listening) {
+      pickLetter();
     }
-    stop()
+
     return () => {
       stop()
     }
-  }, [start])
+  }, [listening])
+
+  useEffect(() => {
+    const regex = new RegExp(letter, "ig");
+
+    if (value !== "" && value.match(regex)) {
+      setscore(score + INCREMENT_SCORE)
+      pickLetter()
+    }
+    return () => {
+      // stop()
+      // reset();
+    }
+  }, [value])
+
+  console.log(`Listening: ${listening}`)
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen">
+    <>
+      <div className="absolute top-0 right-0 text-4xl text-yellow-400 font-mono px-4 py-2 font-semibold">
+        {score} points
+      </div>
+      <div className="flex flex-col justify-center items-center min-h-screen">
+        <div className="text-6xl h-64 text-yellow-400 text-center">
+          What is this letter? <br />
+          {letter}
+        </div>
+        <div className="text-6xl h-64 text-yellow-400 text-center">
+          You guessed: <br />
+          {value}
+        </div>
+        <div className="mt-12">
 
-      <div className="text-6xl h-64 text-yellow-400">
-        {letter}
+          <button className={`h-1/3 w-1/3 text-6xl ${listening ? "mic" : ""}`} onClick={listening ? stop : listen}>
+            🎤
+        </button>
+        </div>
       </div>
-      <div className="text-6xl h-64 text-yellow-400">
-        {value}
-      </div>
-      <button className="mt-12 h-1/3 w-1/3 text-6xl" onClick={() => setstart(!start)}>
-        🎤
-      </button>
-      {listening && <div className="text-4xl text-yellow-300">Go ahead I'm listening</div>}
-    </div>
+
+    </>
   );
 }
