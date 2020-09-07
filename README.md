@@ -1,30 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  🔤 Letter Learning App
+</h1>
 
-## Getting Started
 
-First, run the development server:
+## [Letters App](https://letters-sigma.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
+My daughter is still learning the names of her letters. I had recently watched Wes Bos's video on the browser's built-in voice recognition. I wanted to give it a try so I built a small letter voice recognition game with NextJS 
+
+## 🚀 Quick start
+
+```
+git clone https://github.com/csellis/letters.git
+cd letters
+yarn install
+yarn run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🧐 What's inside?
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+This project is built with [NextJS][nextjs], [TailwindCSS][tailwind], & [Vercel][vercel]. 
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
+## 💫 Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
+[nextjs]: https://nextjs.org/
+[tailwind]: https://www.tailwindcss.com/
+[vercel]: https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme
+
+
+
