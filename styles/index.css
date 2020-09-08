@@ -1,10 +1,8 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 
-/*! purgecss start ignore */
-body {
-  @apply bg-blue-500;
-}
+
+@import "tailwindcss/utilities";
 
 .mic {
 	border-radius: 50%;
@@ -33,6 +31,3 @@ body {
 		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 	}
 }
-/*! purgecss end ignore */
-
-@import "tailwindcss/utilities";

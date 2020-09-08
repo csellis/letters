@@ -53,7 +53,7 @@ export default function Home() {
   console.log(`Listening: ${listening}`)
 
   return (
-    <div className="">
+    <div className="bg-blue-500 min-h-screen min-w-screen">
       <div className="flex flex-col justify-center items-center min-h-screen">
         <div className="top-0 right-0 text-3xl text-yellow-400 font-mono px-4 py-2 font-semibold">
           {score} points
