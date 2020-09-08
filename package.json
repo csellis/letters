@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 5555",
     "build": "next build",
     "start": "next start"
   },
@@ -11,6 +11,7 @@
     "@tailwindui/react": "^0.1.1",
     "@zeit/next-css": "^1.0.1",
     "next": "9.5.3",
+    "postcss-import": "^12.0.1",
     "react": "16.13.1",
     "react-countup": "^4.3.3",
     "react-dom": "16.13.1",
@@ -21,6 +22,6 @@
     "@fullhuman/postcss-purgecss": "^2.3.0",
     "autoprefixer": "^9.8.6",
     "postcss-preset-env": "^6.7.0",
-    "tailwindcss": "^1.8.0"
+    "tailwindcss": "^1.8.5"
   }
 }
